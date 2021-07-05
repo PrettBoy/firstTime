@@ -1,26 +1,24 @@
 import numpy as np
 
-count = 0  # счетчик попыток
-number = np.random.randint(1,101)      # загадали число
+count = 0  
+number = np.random.randint(1,101)      
 print ("Загадано число от 1 до 100")
-for count in range(1,101):         # более компактный вариант счетчика
-        if number == count: break      # выход из цикла, если угадали
-print (f"Вы угадали число {number} за {count} попыток.")
 def game_core_v2(number):
+    ''''''
 count = 1
-hugs = 100
+up = 100
 predict =  np.random.randint(1,101)
 while predict != number:
-    print ("correct", predict)
+    print ("think", predict)
     if predict > number:
-        hugs = predict
+        up = predict
     elif predict < number:
         count = predict + 1
-    predict = (count+hugs)//2
+    predict = (count+up)//2
 
 
 
-print("ответ",predict,'верно')
+print("i guess",predict,'it right number')
 
 
 game_core_v2
